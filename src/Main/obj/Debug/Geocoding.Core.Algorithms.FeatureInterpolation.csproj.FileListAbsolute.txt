@@ -1,0 +1,6 @@
+C:\DevBuild\Tamu\GeoInnovation\Geocoding\Core.Algorithms.FeatureInterpolation\build\1.0.0\debug\Tamu.GeoInnovation.Geocoding.Core.Algorithms.FeatureInterpolation.dll.config
+C:\DevBuild\Tamu\GeoInnovation\Geocoding\Core.Algorithms.FeatureInterpolation\build\1.0.0\debug\Tamu.GeoInnovation.Geocoding.Core.Algorithms.FeatureInterpolation.dll
+C:\DevBuild\Tamu\GeoInnovation\Geocoding\Core.Algorithms.FeatureInterpolation\build\1.0.0\debug\Tamu.GeoInnovation.Geocoding.Core.Algorithms.FeatureInterpolation.pdb
+C:\DevSource\Tamu\GeoInnovation\Geocoding\Core.Algorithms.FeatureInterpolation\src\Main\obj\Debug\Geocoding.Core.Algorithms.FeatureInterpolation.csprojResolveAssemblyReference.cache
+C:\DevSource\Tamu\GeoInnovation\Geocoding\Core.Algorithms.FeatureInterpolation\src\Main\obj\Debug\Tamu.GeoInnovation.Geocoding.Core.Algorithms.FeatureInterpolation.dll
+C:\DevSource\Tamu\GeoInnovation\Geocoding\Core.Algorithms.FeatureInterpolation\src\Main\obj\Debug\Tamu.GeoInnovation.Geocoding.Core.Algorithms.FeatureInterpolation.pdb
