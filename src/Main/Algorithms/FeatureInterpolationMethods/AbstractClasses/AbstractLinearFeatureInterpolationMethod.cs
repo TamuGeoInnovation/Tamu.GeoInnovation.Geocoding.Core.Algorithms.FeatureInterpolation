@@ -87,10 +87,16 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
                         {
                             droppedBackValues = ((Line)nickleStreetAddress.Geometry).calculateDroppedBack(interpolatedPoint, dropbackValueDD, nickleStreetAddress.StreetSide == StreetSide.Left);
                             ret.Geometry = new Point(droppedBackValues[0], droppedBackValues[1]);
+                            ret.Geometry.SqlGeography = nickleStreetAddress.Geometry.SqlGeography;
+                            ret.Geometry.SqlGeometry = nickleStreetAddress.Geometry.SqlGeometry;
+                            ret.Geometry.SRID = nickleStreetAddress.Geometry.SRID;
                         }
                         catch (Exception ex) // if there is an error calculating the drop back use the street center point
                         {
                             ret.Geometry = interpolatedPoint;
+                            ret.Geometry.SqlGeography = nickleStreetAddress.Geometry.SqlGeography;
+                            ret.Geometry.SqlGeometry = nickleStreetAddress.Geometry.SqlGeometry;
+                            ret.Geometry.SRID = nickleStreetAddress.Geometry.SRID;
                             ret.FeatureInterpolationResultType = FeatureInterpolationResultType.Success;
                             //ret.Error = "Error performing interpolation: " + "Dropback error: Dropback calucation exception - using default interpolated point.";
                         }
