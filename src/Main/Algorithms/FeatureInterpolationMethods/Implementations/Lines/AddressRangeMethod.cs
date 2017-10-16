@@ -140,9 +140,8 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 
                     if (matchedFeature.MatchedReferenceFeature.StreetAddressableGeographicFeature.GetType() == typeof(NickleStreet))
                     {
-                        NickleStreet nickleStreetAddress = (NickleStreet)matchedFeature.MatchedReferenceFeature.StreetAddressableGeographicFeature;
-
-                        AddressRange addressRange = null;
+                        NickleStreet nickleStreetAddress = (NickleStreet)matchedFeature.MatchedReferenceFeature.StreetAddressableGeographicFeature;                       
+                        AddressRange addressRange = null;                        
                         switch(matchedFeature.MatchScoreResult.PreferredAddressRangeResultType)
                         {
                             case FeatureMatchAddressRangePreferredAddressRangeResultType.AddressRange:
