@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tamu.GeoInnovation.Geocoding.Core.Algorithms.FeatureInterpolation.Properties {
+namespace Tamu.GeoInnovation.Geocoding.Core.Algorithms.PenaltyScoring.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
