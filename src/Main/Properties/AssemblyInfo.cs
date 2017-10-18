@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Tamu.GeoInnovation.Geocoding.Core.Algorithms.PenaltyScoring")]
+[assembly: AssemblyTitle("Tamu.GeoInnovation.Geocoding.Core.Algorithms.FeatureInterpolation")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Texas A&M University")]
-[assembly: AssemblyProduct("Tamu.GeoInnovation.Geocoding.Core.Algorithms.PenaltyScoring")]
+[assembly: AssemblyProduct("Tamu.GeoInnovation.Geocoding.Core.Algorithms.FeatureInterpolation")]
 [assembly: AssemblyCopyright("Copyright © Texas A&M University 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("CABA5934-6947-41B4-8CBE-7A9FD3038F5C")]
+[assembly: Guid("CB17E8D5-4243-43BD-9FB0-F32A2279BCF0")]
 
 // Version information for an assembly consists of the following four values:
 //
