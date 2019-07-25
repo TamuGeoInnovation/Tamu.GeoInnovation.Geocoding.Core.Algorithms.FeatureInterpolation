@@ -149,7 +149,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
                             }
                             catch (Exception ex) // if there is an error calculating the drop back use the street center point
                             {
-                                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out - reference source: " + Name);
+                                Serilog.Log.Error(ex, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out - reference source: " + Name);
                                 ret.Geometry = interpolatedPoint;
                                 ret.FeatureInterpolationResultType = FeatureInterpolationResultType.Success;
                                 //ret.Error = "Error performing interpolation: " + "Dropback error: Dropback calucation exception - using default interpolated point.";

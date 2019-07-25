@@ -87,7 +87,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
                 }
                 catch (Exception ex)
                 {
-                    Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out - reference source: " + Name);
+                    Serilog.Log.Error(ex, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out - reference source: " + Name);
                     ret.GeocodedError.GeoError = "Error Calculating Dropback - Using Street Centerline Point: " + ex.Message;
                     ((Point)ret.Geometry).Y = interpolatedPoint.Y;
                     ((Point)ret.Geometry).X = interpolatedPoint.X;
