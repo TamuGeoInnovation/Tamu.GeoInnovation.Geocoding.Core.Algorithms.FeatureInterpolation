@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using USC.GISResearchLab.Common.Core.Geocoders.FeatureMatching;
 using USC.GISResearchLab.Common.Core.Geocoders.ReferenceDatasets.Sources.Interfaces;
 using USC.GISResearchLab.Common.Geographics.Units;
@@ -16,7 +17,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
     public class DynamicFeatureCompositionCentroidMethod : AbstractFeatureInterpolationMethod, IPolygonInterpolationMethod
     {
         #region Properties
-        
+
         #endregion
 
         public DynamicFeatureCompositionCentroidMethod(IFeatureSource featureSource)
@@ -33,6 +34,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 
         public override FeatureInterpolationResult DoFeatureInterpolation(ParameterSet parameterSet, MatchedFeature matchedFeature)
         {
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
             FeatureInterpolationResult ret = new FeatureInterpolationResult();
 
             try
@@ -48,6 +50,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 ret.FeatureInterpolationResultType = FeatureInterpolationResultType.ExceptionOccurred;
                 ret.Error = "DFC - Error getting reference feature: " + e.Message;
                 ret.ExceptionOccurred = true;

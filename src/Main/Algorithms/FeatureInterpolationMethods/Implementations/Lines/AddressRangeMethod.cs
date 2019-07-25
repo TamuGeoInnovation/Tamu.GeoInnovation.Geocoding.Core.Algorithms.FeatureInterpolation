@@ -15,6 +15,7 @@ using USC.GISResearchLab.Geocoding.Core.Metadata.Qualities;
 using USC.GISResearchLab.Geocoding.Core.OutputData;
 using USC.GISResearchLab.Geocoding.Core.Queries.Parameters;
 using USC.GISResearchLab.Core.WebServices.ResultCodes;
+using System.Reflection;
 
 namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMethods.Implementations
 {
@@ -86,6 +87,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
                 }
                 catch (Exception ex)
                 {
+                    Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out - reference source: " + Name);
                     ret.GeocodedError.GeoError = "Error Calculating Dropback - Using Street Centerline Point: " + ex.Message;
                     ((Point)ret.Geometry).Y = interpolatedPoint.Y;
                     ((Point)ret.Geometry).X = interpolatedPoint.X;
@@ -102,6 +104,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out - reference source: " + Name);
                 ret.ExceptionOccurred = true;
                 ret.Exception = e;
                 ret.ErrorMessage = e.Message;
@@ -124,6 +127,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 
         public override FeatureInterpolationResult DoFeatureInterpolation(ParameterSet parameterSet, MatchedFeature matchedFeature)
         {
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
             FeatureInterpolationResult ret = new FeatureInterpolationResult();
 
             try
@@ -305,6 +309,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out - reference source: " + Name);
                 ret.FeatureInterpolationResultType = FeatureInterpolationResultType.ExceptionOccurred;
                 ret.Error = "Error performing interpolation: " + e.Message;
                 ret.ExceptionOccurred = true;

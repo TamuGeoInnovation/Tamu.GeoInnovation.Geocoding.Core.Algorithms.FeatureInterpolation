@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Microsoft.SqlServer.Types;
 using SQLSpatialTools;
 using USC.GISResearchLab.Common.Addresses;
@@ -24,6 +25,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 
         public virtual FeatureInterpolationResult DoFeatureInterpolation(ParameterSet parameterSet, MatchedFeature matchedFeature, double numberOfLots, double lotNumber)
         {
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
             FeatureInterpolationResult ret = new FeatureInterpolationResult();
 
             try
@@ -129,6 +131,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out - reference source: " + Name);
                 ret.FeatureInterpolationResultType = FeatureInterpolationResultType.ExceptionOccurred;
                 ret.Error = "Error performing interpolation: " + e.Message;
                 ret.ExceptionOccurred = true;

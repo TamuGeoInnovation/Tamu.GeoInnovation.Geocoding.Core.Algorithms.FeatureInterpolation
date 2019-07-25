@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using Microsoft.SqlServer.Types;
 using SQLSpatialTools;
 using USC.GISResearchLab.Common.Addresses;
@@ -83,6 +84,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 
         public override FeatureInterpolationResult DoFeatureInterpolation(ParameterSet parameterSet, MatchedFeature matchedFeature)
         {
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
             FeatureInterpolationResult ret = new FeatureInterpolationResult();
 
             try
@@ -147,6 +149,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
                             }
                             catch (Exception ex) // if there is an error calculating the drop back use the street center point
                             {
+                                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out - reference source: " + Name);
                                 ret.Geometry = interpolatedPoint;
                                 ret.FeatureInterpolationResultType = FeatureInterpolationResultType.Success;
                                 //ret.Error = "Error performing interpolation: " + "Dropback error: Dropback calucation exception - using default interpolated point.";
@@ -179,6 +182,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out - reference source: " + Name);
                 ret.FeatureInterpolationResultType = FeatureInterpolationResultType.ExceptionOccurred;
                 ret.Error = "Error performing interpolation: " + e.Message;
                 ret.ExceptionOccurred = true;
