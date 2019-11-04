@@ -38,7 +38,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 
             try
             {
-                ret.Geometry =  matchedFeature.MatchedReferenceFeature.StreetAddressableGeographicFeature.Geometry;
+                ret.Geometry = matchedFeature.MatchedReferenceFeature.StreetAddressableGeographicFeature.Geometry;
                 ret.GeocodedError.ErrorBounds = 0.0;
                 ret.GeocodedError.ErrorBoundsUnit = LinearUnitTypes.Meters;
                 ret.GeocodedError.ErrorCalculationType = GeocodedErrorCalculationType.featureBoundingBoxArea;

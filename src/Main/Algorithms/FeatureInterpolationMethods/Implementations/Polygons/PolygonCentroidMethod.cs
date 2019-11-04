@@ -4,10 +4,10 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 {
 
     public class PolygonCentroidMethod : PointMethod
-	{
+    {
         #region Properties
-        
-        
+
+
         #endregion
 
         public PolygonCentroidMethod()
@@ -24,5 +24,5 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             InterpolationType = InterpolationType.ArealInterpolation;
             InterpolationSubType = InterpolationSubType.ArealInterpolationGeometricCentroid;
         }
-	}
+    }
 }

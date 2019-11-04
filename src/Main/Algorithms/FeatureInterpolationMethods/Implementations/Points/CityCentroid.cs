@@ -3,9 +3,9 @@ using USC.GISResearchLab.Geocoding.Core.Metadata.Qualities;
 
 namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMethods.Implementations
 {
-	
-	public class CityCentroid : PointMethod
-	{
+
+    public class CityCentroid : PointMethod
+    {
         public CityCentroid(IFeatureSource featureSource)
             : base(featureSource)
         {

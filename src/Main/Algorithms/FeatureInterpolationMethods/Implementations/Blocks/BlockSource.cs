@@ -16,7 +16,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
     public class BlockSource : IBlockProvider
     {
         #region Properties
-        
+
         private IAddressRangeProvider _AddressRangeProvider;
         public IAddressRangeProvider AddressRangeProvider
         {
@@ -243,7 +243,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 
         public Block GetBlock(string polyLinestring, int sourceId, string source, string fromAddressLeft, string toAddressLeft, string fromAddressRight, string toAddressRight, ValidateableStreetAddress address)
         {
-            
+
             PolyLine polyLine = PolyLine.FromCoordinateString(polyLinestring);
 
             Street street = new Street(address, fromAddressLeft, toAddressLeft, fromAddressRight, toAddressRight);
@@ -258,7 +258,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             int parcelDirection = CardinalDirection.calculateDropBackDirection(street, range.IsLeft);
             string parcelDirectionstring = CardinalDirection.getDirectionName(parcelDirection);
 
-            return GetBlock(polyLinestring, sourceId, source, address, range, fromAddressLeft, toAddressLeft, fromAddressRight, toAddressRight, parcelDirectionstring); 
+            return GetBlock(polyLinestring, sourceId, source, address, range, fromAddressLeft, toAddressLeft, fromAddressRight, toAddressRight, parcelDirectionstring);
         }
 
         public Block GetBlock(string polyline, int sourceId, string source, ValidateableStreetAddress address, AddressRange addressRange, string fromAddressLeft, string toAddressLeft, string fromAddressRight, string toAddressRight, string parcelDirectionstring)
@@ -311,7 +311,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
                 {
                     ValidateableStreetAddress tempAddress = side1.CreateAddress();
                     tempAddress.Number = side1AddressRange[i].ToString();
-                    
+
                     // this line needs to be re-implemented
                     // string roughParcel = FeatureSource.GetFeature(new ParameterSet()).MatchedGeometry.CoordinateString
                     string roughParcel = null;
@@ -327,7 +327,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
                 side1.setInfoStrings();
                 block.AddStreet(side1);
 
-                Street[] corner1Segments = (Street[]) LineIntersectionSource.GetIntersectingLines(side1.End.Y, side1.End.X, address.State);
+                Street[] corner1Segments = (Street[])LineIntersectionSource.GetIntersectingLines(side1.End.Y, side1.End.X, address.State);
                 if (corner1Segments != null && corner1Segments.Length > 0)
                 {
                     Line nextLine = Line.getClockwiseCornerSegment(side1, corner1Segments);
@@ -367,7 +367,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 
                 if (side2 != null)
                 {
-                    Street[]corner2Segments = (Street[])LineIntersectionSource.GetIntersectingLines(side2.End.Y, side2.End.X, address.State);
+                    Street[] corner2Segments = (Street[])LineIntersectionSource.GetIntersectingLines(side2.End.Y, side2.End.X, address.State);
                     if (corner2Segments != null && corner2Segments.Length > 0)
                     {
                         Line nextLine = Line.getClockwiseCornerSegment(side2, corner2Segments);
@@ -413,7 +413,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
                                 ValidateableStreetAddress tempAddress = side4.CreateAddress();
                                 AddressRange side4AddressRange = side4.CreateAddressRange();
                                 AddressRange side4AddressSegment =
-                                    AddressRangeProvider.GetAddresses(tempAddress,side4AddressRange.FromAddress,side4AddressRange.ToAddress);
+                                    AddressRangeProvider.GetAddresses(tempAddress, side4AddressRange.FromAddress, side4AddressRange.ToAddress);
 
                                 int[] side4Addresses = side4AddressSegment.getAddresses();
                                 for (int i = 0; i < side4Addresses.Length; i++)

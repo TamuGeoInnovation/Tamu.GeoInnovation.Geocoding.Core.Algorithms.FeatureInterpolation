@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using USC.GISResearchLab.Common.Addresses;
 using USC.GISResearchLab.Common.Core.Geocoders.FeatureMatching;
 using USC.GISResearchLab.Common.Core.Geocoders.ReferenceDatasets.Sources.Interfaces;
@@ -7,6 +8,7 @@ using USC.GISResearchLab.Common.Geographics.Units;
 using USC.GISResearchLab.Common.Geometries.Lines;
 using USC.GISResearchLab.Common.Geometries.Points;
 using USC.GISResearchLab.Common.Utils.Strings;
+using USC.GISResearchLab.Core.WebServices.ResultCodes;
 using USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMethods.AbstractClasses;
 using USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMethods.Interfaces;
 using USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureMatchScorers;
@@ -14,8 +16,6 @@ using USC.GISResearchLab.Geocoding.Core.Metadata.FeatureInterpolationResults;
 using USC.GISResearchLab.Geocoding.Core.Metadata.Qualities;
 using USC.GISResearchLab.Geocoding.Core.OutputData;
 using USC.GISResearchLab.Geocoding.Core.Queries.Parameters;
-using USC.GISResearchLab.Core.WebServices.ResultCodes;
-using System.Reflection;
 
 namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMethods.Implementations
 {
@@ -23,7 +23,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
     public class AddressRangeMethod : AbstractLinearFeatureInterpolationMethod, ILinearInterpolationMethod
     {
         #region Properties
-        
+
         #endregion
 
         public AddressRangeMethod(IFeatureSource featureSource)
@@ -123,7 +123,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
         }
 
 
-        
+
 
         public override FeatureInterpolationResult DoFeatureInterpolation(ParameterSet parameterSet, MatchedFeature matchedFeature)
         {
@@ -144,9 +144,9 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 
                     if (matchedFeature.MatchedReferenceFeature.StreetAddressableGeographicFeature.GetType() == typeof(NickleStreet))
                     {
-                        NickleStreet nickleStreetAddress = (NickleStreet)matchedFeature.MatchedReferenceFeature.StreetAddressableGeographicFeature;                       
-                        AddressRange addressRange = null;                        
-                        switch(matchedFeature.MatchScoreResult.PreferredAddressRangeResultType)
+                        NickleStreet nickleStreetAddress = (NickleStreet)matchedFeature.MatchedReferenceFeature.StreetAddressableGeographicFeature;
+                        AddressRange addressRange = null;
+                        switch (matchedFeature.MatchScoreResult.PreferredAddressRangeResultType)
                         {
                             case FeatureMatchAddressRangePreferredAddressRangeResultType.AddressRange:
 
@@ -214,7 +214,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
                             if (addressRange.StreetNumberRangeOrderType == StreetNumberRangeOrderType.LowHi)
                             {
                                 double offsetFromStart = .5 + Convert.ToDouble(addressNumber) - addressRange.FromAddress;
-                                
+
 
                                 double lotNumberProportion = offsetFromStart / addressRange.Size;
 
@@ -260,7 +260,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
                             {
                                 lotNumber = numberOfLots / 2.0;
                             }
-                            
+
                         }
                         else if (matchedFeature.MatchScoreResult.AddressRangeResultType == FeatureMatchAddressRangeResultType.OutsideRange)
                         {

@@ -3,8 +3,8 @@ using USC.GISResearchLab.Geocoding.Core.Metadata.Qualities;
 
 namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMethods.Implementations
 {
-	public class CountyCentroid :  PointMethod
-	{
+    public class CountyCentroid : PointMethod
+    {
         public CountyCentroid(IFeatureSource featureSource)
             : base(featureSource)
         {
@@ -15,5 +15,5 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             InterpolationType = InterpolationType.ArealInterpolation;
             InterpolationSubType = InterpolationSubType.ArealInterpolationGeometricCentroid;
         }
-	}
+    }
 }

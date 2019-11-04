@@ -1,7 +1,7 @@
-﻿using System;
-using System.Reflection;
-using Microsoft.SqlServer.Types;
+﻿using Microsoft.SqlServer.Types;
 using SQLSpatialTools;
+using System;
+using System.Reflection;
 using USC.GISResearchLab.Common.Addresses;
 using USC.GISResearchLab.Common.Core.Geocoders.FeatureMatching;
 using USC.GISResearchLab.Common.GeographicFeatures.Streets;

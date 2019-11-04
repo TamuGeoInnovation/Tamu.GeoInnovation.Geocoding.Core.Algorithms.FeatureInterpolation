@@ -17,7 +17,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
     public class ActualGeometryMethod : AbstractFeatureInterpolationMethod, IPolygonInterpolationMethod
     {
         #region Properties
-        
+
         #endregion
 
         #region Method Members
@@ -72,10 +72,10 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             }
             catch (Exception e)
             {
-            
+
                 Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
-               
-            ret.FeatureInterpolationResultType = FeatureInterpolationResultType.ExceptionOccurred;
+
+                ret.FeatureInterpolationResultType = FeatureInterpolationResultType.ExceptionOccurred;
                 ret.Error = "ActualGeometryMethod - Error getting reference feature: " + e.Message;
                 ret.ExceptionOccurred = true;
                 ret.Exception = e;

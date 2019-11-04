@@ -1,15 +1,15 @@
-﻿using USC.GISResearchLab.Common.Core.Geocoders.FeatureMatching;
+﻿using System.Diagnostics;
+using USC.GISResearchLab.Common.Core.Geocoders.FeatureMatching;
 //using USC.GISResearchLab.Common.Core.Geocoders.ReferenceDatasets.Sources.Interfaces;
 using USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMethods.Interfaces;
 using USC.GISResearchLab.Geocoding.Core.Queries.Parameters;
-using System.Diagnostics;
 
 namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMethods.AbstractClasses
 {
     public abstract class AbstractFeatureInterpolationMethod : IInterpolationMethod
     {
         #region Properties
-        
+
         public TraceSource TraceSource { get; set; }
 
         public int Quality { get; set; }
@@ -26,6 +26,6 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
         public abstract FeatureInterpolationResult DoFeatureInterpolation(ParameterSet parameterSet, MatchedFeature matchedFeature);
 
 
-        
+
     }
 }

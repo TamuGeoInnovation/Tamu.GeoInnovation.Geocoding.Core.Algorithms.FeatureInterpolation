@@ -5,7 +5,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 {
 
     public class ZipCodeCentroid : PointMethod
-	{
+    {
         public ZipCodeCentroid(IFeatureSource featureSource)
             : base(featureSource)
         {
@@ -16,5 +16,5 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             InterpolationType = InterpolationType.ArealInterpolation;
             InterpolationSubType = InterpolationSubType.ArealInterpolationGeometricCentroid;
         }
-	}
+    }
 }

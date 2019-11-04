@@ -15,7 +15,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
     public class USPSZip4TigerLineCentroidMethod : AbstractLinearFeatureInterpolationMethod, ILinearInterpolationMethod
     {
         #region Properties
-        
+
         #endregion
 
         public USPSZip4TigerLineCentroidMethod(IFeatureSource featureSource)
@@ -28,7 +28,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
 
             InterpolationType = InterpolationType.LinearInterpolation;
             InterpolationSubType = InterpolationSubType.LinearInterpolationMidPoint;
-            
+
             DropbackValue = 10;
             DropbackUnits = LinearUnitTypes.Meters;
         }
@@ -43,10 +43,10 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             }
             catch (Exception e)
             {
-            
+
                 Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
-             
-            ret.FeatureInterpolationResultType = FeatureInterpolationResultType.ExceptionOccurred;
+
+                ret.FeatureInterpolationResultType = FeatureInterpolationResultType.ExceptionOccurred;
                 ret.Error = "Error performing interpolation: " + e.Message;
                 ret.ExceptionOccurred = true;
                 ret.Exception = e;

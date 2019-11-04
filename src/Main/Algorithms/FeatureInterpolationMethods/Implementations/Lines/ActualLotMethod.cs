@@ -1,7 +1,7 @@
-using System;
-using System.Reflection;
 using Microsoft.SqlServer.Types;
 using SQLSpatialTools;
+using System;
+using System.Reflection;
 using USC.GISResearchLab.Common.Addresses;
 using USC.GISResearchLab.Common.Core.Geocoders.FeatureMatching;
 using USC.GISResearchLab.Common.Core.Geocoders.ReferenceDatasets.Sources.Interfaces;
@@ -36,7 +36,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             set { _AddressRangeProvider = value; }
         }
 
-       
+
         public IBlockProvider BlockProvider
         {
             get { return _BlockProvider; }
@@ -48,7 +48,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             get { return _ILotNumberProvider; }
             set { _ILotNumberProvider = value; }
         }
-        
+
         public INumberOfLotsProvider NumberOfLotsProvider
         {
             get { return _NumberOfLotsProvider; }
@@ -59,7 +59,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Algorithms.FeatureInterpolationMetho
             get { return _BlockSource; }
             set { _BlockSource = value; }
         }
-        
+
 
         #endregion
 
