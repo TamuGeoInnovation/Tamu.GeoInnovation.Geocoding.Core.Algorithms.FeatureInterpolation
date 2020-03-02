@@ -80,7 +80,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\..\..\_RepoConfig\SolutionFiles\Dev\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
@@ -96,15 +95,6 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Runtime.Serialization">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.ServiceModel">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -169,19 +159,9 @@
     <Content Include="LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\AddressProcessing.Core\src\Main\AddressProcessing.Core.Dev.csproj">
-      <Project>{D971C282-ECC4-4C07-A481-5BC862934B96}</Project>
-      <Name>AddressProcessing.Core.Dev</Name>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Common.Core.Addresses\Src\Main\Common.Core.Addresses.Dev.csproj">
       <Project>{29C0949B-4D41-4138-B59B-6DE4A6A1774E}</Project>
       <Name>Common.Core.Addresses.Dev</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Common.Core.ExceptionHandling\Src\Main\Common.Core.ExceptionHandling.Dev.csproj">
-      <Project>{4A553AE2-F5D1-42B6-BE3A-8442DF626EAF}</Project>
-      <Name>Common.Core.ExceptionHandling.Dev</Name>
       <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Common.Core.Geo.GeographicFeatures.Streets\Src\Main\Common.Core.Geo.GeographicFeatures.Streets.Dev.csproj">
@@ -218,11 +198,6 @@
       <Name>Common.Core.Web.Dev</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Common.Data.Databases\Src\Main\Common.Data.Databases.Dev.csproj">
-      <Project>{A7DF15F2-1210-4431-B223-A3A2810DC14A}</Project>
-      <Name>Common.Data.Databases.Dev</Name>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Geocoding.Core.Algorithms.FeatureInterpolation.Interfaces\src\Main\Geocoding.Core.Algorithms.FeatureInterpolation.Interfaces.Dev.csproj">
       <Project>{137D952C-4217-4948-B841-F3E6181822CF}</Project>
       <Name>Geocoding.Core.Algorithms.FeatureInterpolation.Interfaces.Dev</Name>
@@ -253,11 +228,6 @@
       <Name>Geocoding.Core.Algorithms.FeatureMatchScorers.Types.Dev</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Geocoding.Core.Algorithms.FeatureMatchScorers\src\Main\Geocoding.Core.Algorithms.FeatureMatchScorers.Dev.csproj">
-      <Project>{3E16F609-832F-4383-AC8A-86E7CA19B243}</Project>
-      <Name>Geocoding.Core.Algorithms.FeatureMatchScorers.Dev</Name>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Geocoding.Core.Metadata.FeatureInterpolationTypes\src\Main\Geocoding.Core.Metadata.FeatureInterpolationTypes.Dev.csproj">
       <Project>{E3F7B628-9686-410D-A8D8-352FC4648088}</Project>
       <Name>Geocoding.Core.Metadata.FeatureInterpolationTypes.Dev</Name>
@@ -268,19 +238,9 @@
       <Name>Geocoding.Core.Metadata.Qualities.MatchTypes.Dev</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Geocoding.Core.Metadata.Qualities\src\Main\Geocoding.Core.Metadata.Qualities.Dev.csproj">
-      <Project>{33D5F4A3-E00E-4E13-8F28-B591699CE6AC}</Project>
-      <Name>Geocoding.Core.Metadata.Qualities.Dev</Name>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Geocoding.Core.Metadata.Statistics\src\Main\Geocoding.Core.Metadata.Statistics.Dev.csproj">
       <Project>{5F7ABA23-7DA0-4E05-A195-F89BD06B8DE8}</Project>
       <Name>Geocoding.Core.Metadata.Statistics.Dev</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Geocoding.Core.Metadata\src\Main\Geocoding.Core.Metadata.Dev.csproj">
-      <Project>{061B2DAD-1AEF-45A4-A37A-D07223E418B4}</Project>
-      <Name>Geocoding.Core.Metadata.Dev</Name>
       <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Geocoding.Core.OutputData.Errors\src\Main\Geocoding.Core.OutputData.Errors.Dev.csproj">
